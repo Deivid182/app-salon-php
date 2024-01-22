@@ -1,0 +1,21 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.form {
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  label {
+    flex: 0 0 10rem;
+  }
+
+  input {
+    flex: 1;
+    border: none;
+    padding: calc(v.$spacing / 4);
+  }
+}
