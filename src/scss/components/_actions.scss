@@ -1,0 +1,24 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.actions {
+  margin-top: v.$spacing;
+  a {
+    color: v.$white;
+    display: block;
+    margin-bottom: calc(v.$spacing / 2);
+    text-align: center;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  @include m.tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      margin-bottom: 0;
+    }
+  }
+}

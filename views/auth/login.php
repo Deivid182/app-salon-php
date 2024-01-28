@@ -1,5 +1,8 @@
 <h1 class="title-page">Login</h1>
 <p class="description-page">Log in to your account</p>
+<?php
+  include_once __DIR__ . '/../templates/alerts.php';
+?>
 
 <form class="form" method="post" action="/">
   <div class="field">
@@ -10,21 +13,19 @@
       id="email"
       class="input"
       placeholder="Email"
-      required
     >
   </div>
   <div class="field">
     <label for="password" class="label">Password</label>
     <input
       type="password"
-      name="pasword"
+      name="password"
       id="password"
       class="input"
       placeholder="******"
-      required
     >
   </div>
-  <button type="submit">
+  <button class="btn" type="submit">
     Log in
   </button>
 </form>

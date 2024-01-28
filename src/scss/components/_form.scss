@@ -7,6 +7,7 @@
 
 .field {
   display: flex;
+  max-width: 60rem;
   align-items: center;
   margin-bottom: 2rem;
   label {
@@ -17,5 +18,10 @@
     flex: 1;
     border: none;
     padding: calc(v.$spacing / 4);
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    &:focus {
+      outline: none;
+    }
   }
 }
