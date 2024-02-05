@@ -46,4 +46,31 @@ class Email{
     }
 
   }
+  public function sendReset() {
+    $phpmailer = new PHPMailer(true);
+    try {
+      $phpmailer->isSMTP();
+      $phpmailer->Host = 'sandbox.smtp.mailtrap.io';
+      $phpmailer->SMTPAuth = true;
+      $phpmailer->Port = 2525;
+      $phpmailer->Username = 'ea958c08edb02d';
+      $phpmailer->Password = 'e9e08763319f7e';
+
+      $phpmailer->setFrom('accounts@appsalon.com');
+      $phpmailer->addAddress('accounts@appsalon.com', 'AppSalon');
+      $phpmailer->Subject = 'Verify your email';
+      $phpmailer->isHTML(true);
+      $phpmailer->CharSet = 'UTF-8';
+      $content = "<html>";
+      $content .= "Hi there!" . $this->name . "You've successfully created an account.";
+      $content .= "Follow the next link to reset your password";
+      $content .= "<a href='http://localhost:3000/recover-password?code={$this->code}'>Click here</a>";
+      $content .= "</html>";
+
+      $phpmailer->Body = $content;
+      $phpmailer->send();
+    } catch (Exception $e) {
+      echo "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}";
+    }
+  }
 }

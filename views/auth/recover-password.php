@@ -1,22 +1,22 @@
-<h1 class="title-page">Forgot Password</h1>
-<p class="description-page">Enter your email</p>
+<h1 class="title-page">Recover Password</h1>
+<p class="description-page">Enter your new passoword</p>
 
 <?php include_once __DIR__ . '/../templates/alerts.php'; ?>
-
-<form class="form" method="post" action="/forgot-password">
+<?php if($error) return; ?>
+<form class="form" method="post">
   <div class="field">
-    <label for="email" class="label">Email</label>
+    <label for="password" class="label">Password</label>
     <input
-      type="email"
-      name="email"
-      id="email"
+      type="password"
+      name="password"
+      id="password"
       class="input"
-      placeholder="Email"
+      placeholder="***********"
       required
     >
   </div>
   <button class="btn" type="submit">
-    Send
+    Recover
   </button>
 </form>
 

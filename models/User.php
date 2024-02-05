@@ -88,4 +88,20 @@ class User extends ActiveRecord {
       return true;
     }
   }
+  public function validateEmail() {
+    if($this->email === '') {
+      self::$alerts['error'][] = 'The email is required';
+    }
+    return self::$alerts;
+  }
+
+  public function validatePassword() {
+    if($this->password === '' || !$this->password) {
+      self::$alerts['error'][] = 'The password is required';
+    }
+    if(strlen($this->password) < 6) {
+      self::$alerts['error'][] = 'The password must be at least 6 characters';
+    }
+    return self::$alerts;
+  }
 }
