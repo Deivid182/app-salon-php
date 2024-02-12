@@ -26,7 +26,9 @@ $router->get('/message', [LoginController::class, 'message']);
 
 
 $router->get('/appointment', [AppointmentController::class, 'index']);
+
 $router->get('/api/services', [ApiController::class, 'index']);
+$router->post('/api/appointments', [ApiController::class, 'saveAppointment']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

@@ -27,10 +27,12 @@
     display: inline-block;
     font-weight: 700;
     border: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     transition-property: background-color;
     transition-duration: .3s;
     text-align: center;
-    display: block;
     width: 100%;
     margin-bottom: 2rem;
     &:last-of-type {

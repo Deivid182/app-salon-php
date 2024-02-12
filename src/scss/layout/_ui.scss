@@ -23,3 +23,15 @@
     padding: 3rem 0;
   }
 }
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+
+  .btn {
+    @include m.btn(v.$white, v.$black);
+    border-radius: 99999px;
+  }
+}

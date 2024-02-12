@@ -1,0 +1,30 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.info-client {
+  margin: 2rem 0;
+  p {
+    margin: 0 0 1.5rem 0;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    span {
+      font-weight: bold;
+      color: v.$blue;
+    }
+  }
+}
+
+.service-summary {
+  border-bottom: 1px solid v.$gray;
+  padding: 3rem 0;
+  p {
+    margin: 0;
+    &:nth-child(2) {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: v.$blue;
+      font-size: 2.4rem;
+    }
+  }
+}
