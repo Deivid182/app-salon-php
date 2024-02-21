@@ -15,4 +15,18 @@ class Service extends ActiveRecord {
     $this->name = $args['name'] ?? '';
     $this->price = $args['price'] ?? '';
   }
+
+  public function validate () {
+    if(!$this->name) {
+      self::$alerts["error"][] = "The name is required";
+    }
+    if(!$this->price) {
+      self::$alerts["error"][] = "The price is required";
+    }
+    if(!is_numeric($this->price)) {
+      self::$alerts["error"][] = "The price must be a number";
+    }
+
+    return self::$alerts;
+  }
 }

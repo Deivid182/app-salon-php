@@ -21,6 +21,9 @@
     width: 95%;
     margin: 00 auto;
     padding: 3rem 0;
+    @include m.tablet {
+      overflow: scroll;
+    }
   }
 }
 
@@ -33,5 +36,14 @@
   .btn {
     @include m.btn(v.$white, v.$black);
     border-radius: 99999px;
+  }
+}
+
+.admin-bar {
+  margin-bottom: v.$spacing;
+  @include m.tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

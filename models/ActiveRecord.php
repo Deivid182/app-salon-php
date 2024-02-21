@@ -197,4 +197,10 @@ class ActiveRecord
 		$result = self::querySQL($query);
 		return array_shift($result);
 	}
+
+	public static function customSQL($query)
+	{
+		$result = self::querySQL($query);
+		return $result;
+	}
 }

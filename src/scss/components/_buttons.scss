@@ -4,3 +4,7 @@
 .btn {
   @include m.btn(v.$blue, v.$white);
 }
+
+.btn-delete {
+  @include m.btn(v.$red, v.$white);
+}
