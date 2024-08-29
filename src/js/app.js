@@ -94,7 +94,7 @@ const getUserId = () => {
 
 const queryApi = async () => {
   try {
-    const url = "http://localhost:3000/api/services";
+    const url = `${location.origin}/api/services`;
     const res = await fetch(url);
     const data = await res.json();
     showServices(data);
@@ -278,7 +278,7 @@ const confirmAppointment = async () => {
   formData.append("time", time);
   const idServices = services.map((service) => service.id);
   formData.append("services", idServices);
-  const url = 'http://localhost:3000/api/appointments';
+  const url = `${location.origin}/api/appointments`;
   try {
     const res = await fetch(url, {
       method: 'POST',

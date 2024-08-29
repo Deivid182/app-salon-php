@@ -28,7 +28,7 @@ class Router
 
         // $auth = $_SESSION['login'] ?? null;
 
-        $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
+        $currentUrl = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
         $method = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : null;
         if ($method === 'GET') {
             $fn = $this->getRoutes[$currentUrl] ?? null;

@@ -21,11 +21,11 @@ class Email{
     $phpmailer = new PHPMailer(true);
     try {
       $phpmailer->isSMTP();
-      $phpmailer->Host = 'sandbox.smtp.mailtrap.io';
+      $phpmailer->Host = $_ENV['EMAIL_HOST'];
       $phpmailer->SMTPAuth = true;
-      $phpmailer->Port = 2525;
-      $phpmailer->Username = 'ea958c08edb02d';
-      $phpmailer->Password = 'e9e08763319f7e';
+      $phpmailer->Port = $_ENV['EMAIL_PORT'];
+      $phpmailer->Username = $_ENV['EMAIL_USER'];
+      $phpmailer->Password = $_ENV['EMAIL_PASS'];
 
       $phpmailer->setFrom('accounts@appsalon.com');
       $phpmailer->addAddress('accounts@appsalon.com', 'AppSalon');
@@ -36,7 +36,7 @@ class Email{
       $content .= "Here is your verification code: {$this->code}";
       $content .= "Hi there!" . $this->name . "You've successfully created an account.";
       $content .= "Follow the next link to verify your account";
-      $content .= "<a href='http://localhost:3000/verify-account?code={$this->code}'>Click here</a>";
+      $content .= "<a href='" . $_ENV['APP_URL'] . "/verify-account?code={$this->code}'>Click here</a>";
       $content .= "</html>";
 
       $phpmailer->Body = $content;
@@ -64,7 +64,7 @@ class Email{
       $content = "<html>";
       $content .= "Hi there!" . $this->name . "You've successfully created an account.";
       $content .= "Follow the next link to reset your password";
-      $content .= "<a href='http://localhost:3000/recover-password?code={$this->code}'>Click here</a>";
+      $content .= "<a href='" . $_ENV['APP_URL'] . "/recover-password?code={$this->code}'>Click here</a>";
       $content .= "</html>";
 
       $phpmailer->Body = $content;

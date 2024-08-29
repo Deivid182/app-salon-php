@@ -1,3 +1,13 @@
+CREATE TABLE `app-salon`.services (
+	id int(11) auto_increment NOT NULL,
+	name varchar(60) NULL,
+	price DECIMAL(5,2) NULL,
+	CONSTRAINT services_pk PRIMARY KEY (id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
+
 INSERT INTO `servicios (`nombre`, `precio`) VALUES
  ('Corte de Cabello Mujer', 90.00),
  ('Corte de Cabello Hombre', 88.00).
